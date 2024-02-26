@@ -1,0 +1,76 @@
+
+
+<div class="container mt-4">
+    <!-- Formulario para agregar un nuevo afiliado -->
+    <form (ngSubmit)="addAfiliado()" class="mb-4">
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" class="form-control" [(ngModel)]="nuevoAfiliado.nombre" required>
+          </div>
+          <div class="col-md-6 mb-3">
+            <label for="fechaNacimiento">Fecha de Nacimiento:</label>
+            <input type="date" id="fechaNacimiento" name="fechaNacimiento" class="form-control" [(ngModel)]="nuevoAfiliado.fechaNacimiento" required>
+          </div>
+        </div>
+      
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <label for="direccion">Dirección:</label>
+            <input type="text" id="direccion" name="direccion" class="form-control" [(ngModel)]="nuevoAfiliado.direccion" required>
+          </div>
+          <div class="col-md-6 mb-3">
+            <label for="telefono">Teléfono:</label>
+            <input type="text" id="telefono" name="telefono" class="form-control" [(ngModel)]="nuevoAfiliado.telefono" required>
+          </div>
+        </div>
+      
+        <div class="row">
+            <div class="col-md-6 mb-3">
+                <label for="genero">Género:</label>
+                <select id="genero" name="genero" class="form-control" [(ngModel)]="nuevoAfiliado.genero" required>
+                <option value="Masculino">Masculino</option>
+                <option value="Femenino">Femenino</option>
+                </select>
+            </div>
+              
+          <div class="col-md-6 mb-3">
+            <button type="submit" class="btn btn-primary mt-4">Agregar Afiliado</button>
+          </div>
+        </div>
+      
+      </form>
+      
+  
+   <!-- Lista de afiliados en una tabla -->
+    <table class="table table-striped table-hover">
+      <thead>
+        <tr>
+          <th scope="col">Nombre</th>
+          <th scope="col">Fecha de Nacimiento</th>
+          <th scope="col">Dirección</th>
+          <th scope="col">Teléfono</th>
+          <th scope="col">Género</th>
+          <th scope="col">Acciones</th> <!-- Nueva columna para botones -->
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let afiliado of afiliados">
+          <td>{{ afiliado.nombre }}</td>
+          <td>{{ afiliado.fechaNacimiento }}</td>
+          <td>{{ afiliado.direccion }}</td>
+          <td>{{ afiliado.telefono }}</td>
+          <td>{{ afiliado.genero }}</td>
+          <td>
+            <!-- Botón de Editar -->
+            <button (click)="editarAfiliado( afiliado.id,afiliado)" class="btn btn-primary">Editar</button>
+            
+            <!-- Botón de Eliminar -->
+            <button (click)="eliminarAfiliado(afiliado.id)" class="btn btn-danger">Eliminar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+  
