@@ -35,18 +35,18 @@ El código fuente se organiza en los siguientes directorios:
 
 El servicio `AfiliadosService` se encarga de realizar operaciones relacionadas con los afiliados mediante peticiones HTTP. A continuación, se detallan los métodos principales:
 
-1. **`getAfiliados(): Promise<any[]>`:**
-   - Descripción: Obtiene la lista de afiliados desde el servidor.
-   - Uso:
+1. **`getAfiliados(): Promise<any[]>`**
+   - **Descripción:** Obtiene la lista de afiliados desde el servidor.
+   - **Uso:**
      ```typescript
      afiliadosService.getAfiliados().then(afiliados => {
        console.log('Lista de Afiliados:', afiliados);
      });
      ```
 
-2. **`addAfiliado(afiliado: any): Promise<any>`:**
-   - Descripción: Agrega un nuevo afiliado al servidor.
-   - Uso:
+2. **`addAfiliado(afiliado: any): Promise<any>`**
+   - **Descripción:** Agrega un nuevo afiliado al servidor.
+   - **Uso:**
      ```typescript
      const nuevoAfiliado = { /* datos del nuevo afiliado */ };
      afiliadosService.addAfiliado(nuevoAfiliado).then(afiliadoAgregado => {
@@ -54,9 +54,9 @@ El servicio `AfiliadosService` se encarga de realizar operaciones relacionadas c
      });
      ```
 
-3. **`editarAfiliado(id: number, nuevosDatos: any): Promise<void>`:**
-   - Descripción: Edita los datos de un afiliado existente en el servidor.
-   - Uso:
+3. **`editarAfiliado(id: number, nuevosDatos: any): Promise<void>`**
+   - **Descripción:** Edita los datos de un afiliado existente en el servidor.
+   - **Uso:**
      ```typescript
      const idAfiliado = 1; // ID del afiliado a editar
      const nuevosDatosAfiliado = { /* nuevos datos del afiliado */ };
@@ -65,9 +65,9 @@ El servicio `AfiliadosService` se encarga de realizar operaciones relacionadas c
      });
      ```
 
-4. **`eliminarAfiliado(id: number): Promise<void>`:**
-   - Descripción: Elimina un afiliado existente en el servidor.
-   - Uso:
+4. **`eliminarAfiliado(id: number): Promise<void>`**
+   - **Descripción:** Elimina un afiliado existente en el servidor.
+   - **Uso:**
      ```typescript
      const idAfiliadoEliminar = 1; // ID del afiliado a eliminar
      afiliadosService.eliminarAfiliado(idAfiliadoEliminar).then(() => {
@@ -76,6 +76,7 @@ El servicio `AfiliadosService` se encarga de realizar operaciones relacionadas c
      ```
 
 Estos métodos utilizan la función `fetch` para realizar peticiones HTTP al servidor backend. Asegúrate de tener el servidor backend en ejecución y que las rutas coincidan con la configuración de tu backend.
+
 
 ## Instalación de Dependencias
 
